@@ -39,4 +39,34 @@ class Budget:
         total = sum(e.amount for e in self.expenses)
         print(f"총 지출: {total}원\n")
 
+months = []
+    totals = []
+
+    for expense in self.expenses:
+        date = expense.date
+        month = date[:7]
+
+        found = False
+        for i in range(len(months)):
+            if months[i] == month:
+                totals[i] = totals[i] + expense.amount
+                found = True
+                break
+
+        if not found:
+            months.append(month)
+            totals.append(expense.amount)
+
+    total = 0
+    for i in range(len(totals)):
+        total = total + totals[i]
+
+    count = len(months)
+
+    if count > 0:
+        average = total / count
+    else:
+        average = 0
+
+    print("월별 평균 지출:", round(average, 2), "원\n")
 
