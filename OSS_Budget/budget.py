@@ -21,7 +21,7 @@ class Budget:
             if total > self.budget_limit:
                 print("예산을 초과했습니다\n")
             else:
-                print(f"현재 총 지출: {total}원 / 예산: {self.budget_limit}원\n")
+                print(f" 현재 총 지출: {total}원 / 예산: {self.budget_limit}원\n")
         else:
             print()
     
