@@ -47,6 +47,26 @@ class Calculator:
 
         self.entry.delete(0, tk.END)
         self.entry.insert(tk.END, self.expression)
+def convert_unit(self):
+    text = self.unit_input.get()
+    try:
+        num = float(text)
+        unit = self.unit_var.get()
+
+        if unit == "cm to inch":
+            result = num / 2.54
+        if unit == "inch to cm":
+            result = num * 2.54
+        if unit == "kg to lb":
+            result = num * 2.2
+        if unit == "lb to kg":
+            result = num / 2.2
+
+        self.entry.delete(0, tk.END)
+        self.entry.insert(tk.END, str(result))
+    except:
+        self.entry.delete(0, tk.END)
+        self.entry.insert(tk.END, "에러")
 
 
 
